@@ -21,7 +21,7 @@ Before using this extension, you need to install the Fuel toolchain:
 
 ```bash
 # Install fuelup (Fuel toolchain installer)
-curl --proto '=https' --tlsv1.2 -sSf https://install.fuel.network/fuelup-init.sh | sh
+curl https://install.fuel.network | sh
 
 # Install the latest Fuel toolchain
 fuelup install latest
@@ -31,6 +31,8 @@ fuelup default latest
 This will install:
 - `forc` - The Fuel Orchestrator (Sway compiler)
 - `forc-lsp` - The Sway Language Server
+- `forc-fmt` - Sway code formatter
+- `forc-doc` - Sway documentation generator
 - `fuel-core` - The Fuel node implementation
 - Other Fuel development tools
 

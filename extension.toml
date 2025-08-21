@@ -3,7 +3,7 @@ name = "Sway"
 description = "Sway smart contract language support with LSP integration"
 version = "0.1.0"
 schema_version = 1
-authors = ["FuelLabs <noreply@fuel.sh>"]
+authors = ["Fuel Labs <contact@fuel.sh>"]
 repository = "https://github.com/FuelLabs/sway-zed-extension"
 
 [grammars.sway]

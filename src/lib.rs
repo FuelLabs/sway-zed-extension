@@ -16,7 +16,7 @@ impl zed::Extension for SwayExtension {
             "sway-lsp" => {
                 let command = worktree
                     .which("forc-lsp")
-                    .ok_or_else(|| "forc-lsp not found in PATH. Please install the Fuel toolchain: https://docs.fuel.network/docs/sway/lsp/installation/")?;
+                    .ok_or_else(|| "forc-lsp not found in PATH. Install with: curl https://install.fuel.network | sh")?;
 
                 Ok(zed::Command {
                     command,

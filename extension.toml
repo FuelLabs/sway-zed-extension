@@ -8,9 +8,11 @@ repository = "https://github.com/FuelLabs/sway-zed-extension"
 
 [grammars.sway]
 repository = "https://github.com/FuelLabs/tree-sitter-sway"
-rev = "58b7cac8fc14c92b0677c542610d8738c373fa81"
+commit = "395006713db3bbb90d267ebdfcbf1881b399b05c"
 
 [language_servers.sway-lsp]
 name = "Sway Language Server"
 languages = ["Sway"]
-language_ids = { Sway = "sway" }
+
+[language_servers.sway-lsp.language_ids]
+"Sway" = "sway"

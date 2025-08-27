@@ -6,42 +6,6 @@ block_comment = ["/*", "*/"]
 tab_size = 4
 hard_tabs = false
 first_line_pattern = "^(script|contract|predicate|library)"
-scope = "source.sway"
 
 [language_servers]
 primary = "sway-lsp"
-
-[outline]
-symbols = [
-  { type = "function", icon = "function", label = "function" },
-  { type = "struct", icon = "structure", label = "struct" },
-  { type = "enum", icon = "enum", label = "enum" },
-  { type = "trait", icon = "interface", label = "trait" },
-  { type = "impl", icon = "module", label = "impl" },
-  { type = "abi", icon = "interface", label = "abi" },
-  { type = "contract", icon = "class", label = "contract" },
-  { type = "storage", icon = "property", label = "storage" },
-  { type = "configurable", icon = "constant", label = "configurable" }
-]
-
-[word_characters]
-characters = "_"
-
-[indent]
-indent_size = 4
-preferred_line_length = 100
-
-[format_on_save]
-external = { command = "forc", arguments = ["fmt", "--check"] }
-
-[autoclose]
-"(" = ")"
-"[" = "]"
-"{" = "}"
-"\"" = "\""
-"'" = "'"
-
-[brackets]
-"(" = ")"
-"[" = "]"
-"{" = "}"

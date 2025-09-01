@@ -258,7 +258,6 @@
   "@"
   ".."
   "..="
-  "'"
 ] @operator
 
 ; Paths and namespaces

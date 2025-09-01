@@ -25,6 +25,11 @@ curl https://install.fuel.network | sh
 # Install the latest Fuel toolchain
 fuelup install latest
 fuelup default latest
+
+# Verify installation
+fuelup --version  
+forc --version  
+forc-lsp --version
 ```
 
 This will install:

@@ -1,17 +1,4 @@
-; -------
-; Tree-Sitter doesn't allow overrides in regards to captures,
-; though it is possible to affect the child node of a captured
-; node. Thus, the approach here is to flip the order so that
-; overrides are unnecessary.
-; -------
-
-; -------
-; Types
-; -------
-
-; ---
-; Primitives
-; ---
+; Literals and primitive types
 
 (escape_sequence) @constant.character.escape
 (primitive_type) @type.builtin
@@ -28,9 +15,7 @@
   (block_comment)
 ] @comment
 
-; ---
-; Extraneous
-; ---
+; Built-in variables and enum variants
 
 (self) @variable.builtin
 (enum_variant (identifier) @type.enum.variant)
@@ -45,9 +30,7 @@
   "'" @label
   (identifier) @label)
 
-; ---
 ; Punctuation
-; ---
 
 [
   "::"
@@ -78,9 +61,7 @@
 (closure_parameters
   "|" @punctuation.bracket)
 
-; ---
 ; Variables
-; ---
 
 (let_declaration
   pattern: [
@@ -100,9 +81,7 @@
 (closure_parameters
 	(identifier) @variable.parameter)
 
-; -------
 ; Keywords
-; -------
 
 (for_expression
   "for" @keyword.control.repeat)
@@ -175,17 +154,12 @@
 
 ; TODO: variable.mut to highlight mutable identifiers via locals.scm
 
-; -------
-; Guess Other Types
-; -------
+; Type inference heuristics
 
 ((identifier) @constant
  (#match? @constant "^[A-Z][A-Z\\d_]*$"))
 
-; ---
-; PascalCase identifiers in call_expressions (e.g. `Ok()`)
-; are assumed to be enum constructors.
-; ---
+; Capitalized identifiers in call expressions are enum constructors
 
 (call_expression
   function: [
@@ -196,10 +170,7 @@
         (#match? @type.enum.variant "^[A-Z]")))
   ])
 
-; ---
-; Assume that types in match arms are enums and not
-; tuple structs. Same for `if let` expressions.
-; ---
+; Match patterns and struct constructors
 
 (match_pattern
     (scoped_identifier
@@ -217,16 +188,12 @@
       name: (type_identifier) @constructor)
     ])
 
-; ---
-; Other PascalCase identifiers are assumed to be structs.
-; ---
+; Capitalized identifiers default to struct types
 
 ((identifier) @type
   (#match? @type "^[A-Z]"))
 
-; -------
 ; Functions
-; -------
 
 (call_expression
   function: [
@@ -251,9 +218,7 @@
 (function_signature_item
   name: (identifier) @function)
 
-; -------
 ; Operators
-; -------
 
 [
   "*"
@@ -296,9 +261,7 @@
   "'"
 ] @operator
 
-; -------
-; Paths
-; -------
+; Paths and namespaces
 
 (use_declaration
   argument: (identifier) @namespace)
@@ -314,9 +277,7 @@
   path: (identifier)? @namespace
   alias: (identifier) @namespace)
 
-; ---
-; Remaining Paths
-; ---
+; Scoped identifiers
 
 (scoped_identifier
   path: (identifier)? @namespace
@@ -324,9 +285,7 @@
 (scoped_type_identifier
   path: (identifier) @namespace)
 
-; -------
-; Remaining Identifiers
-; -------
+; Fallback identifiers
 
 "?" @special
 

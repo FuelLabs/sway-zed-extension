@@ -23,7 +23,7 @@ Before using this extension, you need to install the Fuel toolchain:
 curl https://install.fuel.network | sh
 
 # Install the latest Fuel toolchain
-fuelup install latest
+fuelup toolchain install latest
 fuelup default latest
 
 # Verify installation

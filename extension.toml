@@ -8,7 +8,7 @@ repository = "https://github.com/FuelLabs/sway-zed-extension"
 
 [grammars.sway]
 repository = "https://github.com/FuelLabs/tree-sitter-sway"
-commit = "395006713db3bbb90d267ebdfcbf1881b399b05c"
+rev = "master"
 
 [language_servers.sway-lsp]
 name = "Sway Language Server"

@@ -9,7 +9,6 @@ Official Zed extension for the Sway programming language, providing comprehensiv
 - **Code completion** and IntelliSense
 - **Error diagnostics** and warnings
 - **Go to definition** and symbol navigation
-- **Code formatting** with `swayfmt`
 - **Hover documentation** and type information
 - **Inlay hints** for types and parameters
 
@@ -45,7 +44,7 @@ forc-lsp --version
 
 ## Installation
 
-### Via Zed Extensions (Recommended)
+### From Zed Extension Marketplace
 
 1. Open Zed
 2. Press `Cmd/Ctrl + Shift + P` to open the command palette
@@ -53,7 +52,9 @@ forc-lsp --version
 4. Search for "Sway"
 5. Click "Install" on the Sway extension
 
-### Manual Installation (Development)
+That's it! The extension is automatically available through Zed's built-in extension registry.
+
+### Manual Installation (Development Only)
 
 1. Clone this repository:
    ```bash
@@ -76,35 +77,6 @@ Once installed, the extension will automatically activate for `.sw` files. The l
 
 - `.sw` - Sway source files
 
-### Language Server Features
-
-The extension provides full LSP support including:
-
-- **Diagnostics**: Real-time error and warning reporting
-- **Completion**: Context-aware code completion
-- **Hover**: Type information and documentation on hover
-- **Go to Definition**: Navigate to symbol definitions
-- **Find References**: Find all references to a symbol
-- **Document Symbols**: File outline and symbol navigation
-- **Formatting**: Code formatting via `swayfmt`
-- **Rename**: Symbol renaming across files
-- **Code Actions**: Quick fixes and refactoring suggestions
-
-### Example Sway File
-
-Create a new `.sw` file to test the extension:
-
-```sway
-script;
-
-use std::logging::log;
-
-fn main() {
-    let number: u64 = 42;
-    log(number);
-}
-```
-
 ## Project Structure
 
 This extension includes:
@@ -113,32 +85,6 @@ This extension includes:
 - `src/lib.rs` - WebAssembly extension logic
 - `languages/sway/config.toml` - Language configuration
 - `languages/sway/highlights.scm` - Syntax highlighting rules
-
-## Development
-
-### Building
-
-```bash
-cargo check
-cargo test
-```
-
-### Testing
-
-The extension includes unit tests for core functionality:
-
-```bash
-cargo test
-```
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Ensure `cargo test` passes
-6. Submit a pull request
 
 ## Troubleshooting
 
@@ -179,11 +125,3 @@ If the extension isn't loading:
 ## License
 
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
-
-## Support
-
-For issues and support:
-
-- [GitHub Issues](https://github.com/FuelLabs/sway-zed-extension/issues)
-- [Fuel Discord](https://discord.gg/fuel-network)
-- [Sway Forum](https://forum.fuel.network/)

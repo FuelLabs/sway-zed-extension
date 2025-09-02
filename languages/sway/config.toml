@@ -1,0 +1,11 @@
+name = "Sway"
+grammar = "sway"
+path_suffixes = ["sw"]
+line_comments = ["//"]
+block_comment = ["/*", "*/"]
+tab_size = 4
+hard_tabs = false
+first_line_pattern = "^(script|contract|predicate|library)"
+
+[language_servers]
+primary = "sway-lsp"

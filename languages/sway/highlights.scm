@@ -104,12 +104,16 @@
   "break"
   "continue"
   "return"
+  "revert"
 ] @keyword.control.return
 
 [
   "contract"
   "script"
   "predicate"
+  "asm"
+  "log"
+  "require"
 ] @keyword.other
 
 "use" @keyword.control.import

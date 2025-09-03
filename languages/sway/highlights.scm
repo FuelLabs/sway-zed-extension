@@ -104,7 +104,6 @@
   "break"
   "continue"
   "return"
-  "revert"
 ] @keyword.control.return
 
 [
@@ -112,8 +111,6 @@
   "script"
   "predicate"
   "asm"
-  "log"
-  "require"
 ] @keyword.other
 
 "use" @keyword.control.import
